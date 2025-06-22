@@ -238,6 +238,14 @@ const cleanup = () => {
 onMounted(() => {
     if (props.eager) {
         isIntersecting.value = true
+
+        if (props.src) {
+            const preload = document.createElement('link')
+            preload.rel = 'preload'
+            preload.as = 'image'
+            preload.href = props.src
+            document.head.appendChild(preload)
+        }
     }
     else {
         setupIntersectionObserver()
@@ -269,22 +277,3 @@ watch(() => props.eager, (newEager) => {
     }
 })
 </script>
-
-<style scoped>
-/* Custom aspect ratio utilities if needed */
-.aspect-\[16\/9\] {
-  aspect-ratio: 16/9;
-}
-
-.aspect-\[4\/3\] {
-  aspect-ratio: 4/3;
-}
-
-.aspect-\[1\/1\] {
-  aspect-ratio: 1/1;
-}
-
-.aspect-\[3\/2\] {
-  aspect-ratio: 3/2;
-}
-</style>
