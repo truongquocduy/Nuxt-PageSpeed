@@ -42,7 +42,7 @@ export default defineNuxtConfig({
         compressPublicAssets: true, // Bật compression cho static assets
         minify: true, // Minify output
         prerender: {
-            // crawlLinks: true, // Pre-render các trang được link
+            crawlLinks: process.env.SKIP_CRAWL !== 'true', // Pre-render các trang được link
         },
     },
 
