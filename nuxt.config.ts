@@ -92,5 +92,6 @@ export default defineNuxtConfig({
         },
         display: 'swap',
         preconnect: true,
+        preload: true,
     },
 })
