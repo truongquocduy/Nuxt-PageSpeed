@@ -44,9 +44,6 @@ export default defineNuxtConfig({
         prerender: {
             crawlLinks: process.env.SKIP_CRAWL !== 'true', // Pre-render các trang được link
         },
-        server: {
-            compression: true, // Gzip cho response HTML/API
-        },
     },
 
     vite: {
