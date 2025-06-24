@@ -1,19 +1,23 @@
 <script setup lang="ts">
+import { useSettingStore } from '~/store/settingStore'
 
+const settingStore = useSettingStore()
+
+const { shopLogo } = storeToRefs(settingStore)
 </script>
 
 <template>
     <div class="bg-(--color-primary) text-white py-2">
         <UiContainer>
             <div class="flex justify-between items-center">
-                <div class="space-x-2">
+                <div class="space-x-2 text-xs">
                     <span class="badge bg-(--color-primary-dark) rounded-3xl font-semibold px-3 py-1">HOT</span>
                     <span>Free Express Shipping</span>
                 </div>
 
                 <div class="space-x-4 hidden md:flex">
                     <select
-                        class="px-4 py-1 bg-slate-800 text-gray-100 rounded-md outline-0 cursor-pointer mr-6"
+                        class="px-4 py-1 bg-slate-800 text-gray-100 rounded-md outline-0 cursor-pointer mr-6 text-xs"
                     >
                         <option>Tiếng Việt</option>
                         <option>Option 1</option>
@@ -44,13 +48,13 @@
                         <UiLazyLoad
                             alt="Random image"
                             class="w-full max-w-md"
-                            src="https://image.mavangthangloi.com/_w300/storage/logos/mavangthangloi.png"
+                            :src="cdnImage(String(shopLogo), { s: '_w300' })"
                         />
                     </NuxtLink>
                 </div>
 
                 <div
-                    class="text-[14px] max-w-[800px] md:max-w-[600px] sm:hidden md:block flex-[1_1_0px]"
+                    class="max-w-[800px] md:max-w-[600px] sm:hidden md:block flex-[1_1_0px]"
                 >
                     <ul class="flex space-x-10 justify-end">
                         <li class="cursor-pointer">
@@ -79,7 +83,7 @@
                     class="max-w-[350px] flex-[1_1_0px] xl:flex items-center space-x-4 md:hidden"
                 >
                     <input
-                        class="bg-(--color-bg) border-1 border-gray-300 hover:border-black outline-0 p-2 rounded-xl font-semibold w-full"
+                        class="bg-(--color-bg) border-1 border-gray-300 hover:border-black outline-0 p-2 rounded-xl font-semibold w-full  text-xs"
                         placeholder="Tìm kiếm sản phẩm và bài viết ..."
                         type="text"
                     />

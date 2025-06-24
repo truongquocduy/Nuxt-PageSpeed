@@ -7,11 +7,11 @@
 @import "./components/_product.css";
 
 body {
-    font-size: 12px;
-    font-family: Public Sans, Public Sans Fallback;
+    font-size: 14px;
+    line-height: 21px;
     font-style: normal;
     font-weight: 400;
-    line-height: 1.5;
+    font-family: Public Sans, Public Sans Fallback;
     background-color: var(--color-bg);
 }
 
