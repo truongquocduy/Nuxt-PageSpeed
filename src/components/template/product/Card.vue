@@ -37,12 +37,10 @@ const { shopCurrency } = storeToRefs(useSettingStore())
         <!-- Product Photo -->
         <div class="product__photo">
             <NuxtLink :to="`/${node.slug}`">
-                <NuxtImg
-                    class="w-full h-full object-cover"
-                    height="300"
-                    preload
-                    :src="cdnImage(String(node.thumbnail), { s: '_md' })"
-                    width="300"
+                <UiLazyLoad
+                    alt="node.name"
+                    class="w-full"
+                    :src="cdnImage(String(node.thumbnail), { s: '_w300' })"
                 />
             </NuxtLink>
         </div>

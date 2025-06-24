@@ -4,7 +4,7 @@ import svgLoader from 'vite-svg-loader'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 
-    modules: ['@nuxt/eslint', '@nuxtjs/google-fonts', '@pinia/nuxt', '@nuxtjs/i18n', '@nuxt/image'],
+    modules: ['@nuxt/eslint', '@nuxtjs/google-fonts', '@pinia/nuxt', '@nuxtjs/i18n'],
 
     // Tối ưu hóa rendering
     ssr: true, devtools: { enabled: false },
@@ -101,10 +101,4 @@ export default defineNuxtConfig({
             optimizeTranslationDirective: false,
         },
     },
-
-    image: {
-    // KHÔNG KHAI BÁO domains
-        provider: 'none', // <- hoặc 'static'
-    },
-
 })
