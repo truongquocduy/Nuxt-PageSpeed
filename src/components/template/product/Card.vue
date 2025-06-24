@@ -40,7 +40,7 @@ const { shopCurrency } = storeToRefs(useSettingStore())
                 <UiLazyLoad
                     alt="node.name"
                     class="w-full"
-                    :src="cdnImage(String(node.thumbnail), { s: '_w300' })"
+                    :src="cdnImage(String(node.thumbnail), { s: '_md' })"
                 />
             </NuxtLink>
         </div>
